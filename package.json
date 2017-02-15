@@ -1,0 +1,11 @@
+{
+  "name": "mnmlchat",
+  "version": "0.0.2",
+  "description": "A minimalistic and simple chat application.",
+  "dependencies": {
+    "bootstrap": "latest",
+    "express": "^4.14.1",
+    "jquery": "^3.1.1",
+    "socket.io": "^1.7.2"
+  }
+}
