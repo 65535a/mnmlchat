@@ -17,11 +17,14 @@ app.get('/', function(req, res){
 	res.sendfile('index.html');
 });
 
+io.set('heartbeat timeout', 50000);
+io.set('heartbeat interval', 2000);
+
 io.on('connection', function(socket){
 	console.log('a user connected');
 	socket.on('disconnect', function(){
 		if(!socket.nickname) return;
-		clearUser(socket.nickname);
+		clearUser(socket.nickname, socket.room);
 		delete users[socket.nickname];
 		console.log('a user disconnected');
 	});	
@@ -88,7 +91,7 @@ io.on('connection', function(socket){
 		updateNicknames(room);
 	});
 		
-	function clearUser(user){
+	function clearUser(user, room){
 		removeFromRoom(rooms[room], socket.nickname);
 		destroyRoom(socket.room);
 		updateNicknames(socket.room);

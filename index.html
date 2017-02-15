@@ -3,18 +3,18 @@
   <head>
     <title>mnmlchat</title>
     <style>
-     { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 20px Helvetica, Arial; }
-      #chat { background: #000; padding: 3px; position: fixed; bottom: 0; width: 60%; }
+    	{ margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 20px Helvetica, Arial; overflow: scroll; }
+      #chat { background: #000; padding: 3px; position: fixed; bottom: 0; width:60%;}
       #m { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
       #s { color: #ffffff; width: 9%; background: none; border: none; padding: 0px; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px;}
       #messages li:nth-child(odd) { background: #eee; }
-      #content { display: none; margin-left: 10px;}
+      #content { display: none; }
       #users { float: right; width: 15%;}
-      #rooms { float: right; width: 15% }
-      #chatWindow { background: #fff; padding: 3px; position: fixed; top: 0; left: 0; width: 70%;}
+      #rooms { float: right; width: 15%; }
+      #chatWindow { background: #fff; padding: 3px; position: absolute; top: 0; left: 0; width: 70%; overflow: scroll;}
     </style> 
 
 	<link rel="stylesheet" href="/css/bootstrap.min.css"> 
