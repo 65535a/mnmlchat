@@ -84,12 +84,17 @@ io.on('connection', function(socket){
 		console.log(socket.nickname + ' joined the room : ' + room);
 	});
 	
-	socket.on('leave room', function(room){
-		socket.leave(room);
-		removeFromRoom(rooms[room], socket.nickname);
-		console.log(socket.nickname + ' left the room : ' + room);
-		destroyRoom(room);
-		updateNicknames(room);
+	socket.on('leave room', function(room, callback){
+		if(room === socket.room){
+			console.log(room);
+			console.log(socket.room);
+			callback(true);
+			socket.leave(room);
+			removeFromRoom(rooms[room], socket.nickname);
+			console.log(socket.nickname + ' left the room : ' + room);
+			destroyRoom(room);
+			updateNicknames(room);
+		} else { callback(false) }
 	});
 		
 	function clearUser(user, room){

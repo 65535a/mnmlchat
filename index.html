@@ -22,27 +22,33 @@
 
     <div id="content">
     	
-    	<div id="header">
-    		<div id="headerChat">mnmlchat</div>
-    		<div id="headerUsers"><p>users</p></div>
-    		<div id="headerRooms"><p>channels</p></div>
-    	</div>
+    	<div id="headerBar">
+    		<div id="headerChat" class="header"><h2>mnmlchat</h2></div>
+       	</div>
   	  	
   	  	<div id="chatWindow">
 			<ul id="messages"></ul>
+  	 	
+  	 	  	<form id="chat">
+  	   			<input id="m" autocomplete="off""/><button id="s">send</button>
+  			</form>
   	 	</div>		
   	 	 	
-  	 	<form id="chat">
-  	   		<input id="m" autocomplete="off""/><button id="s">send</button>
-  		</form>
+
 			
-		<div id="users"><p>USERS OVER HERE</p></div>
+		<div id="usersColumn">
+			<div id="headerUsers" class="header"><h2>users</h2></div>
+			<div id="users">
+			<p></p>
+			</div>
+		</div>
 
 		<div id="rooms">
 		  	<form id="addRoom" action="">				
 					<input size="35" id="room" autocomplete="off" /><button id="add">add</button>				
   			</form>
-			<p id="roomsList">ROOMS OVER HERE</p>
+			<div id="headerRooms" class="header"><h2>channels</h2></div>
+			<p id="roomsList"></p>
 		</div>
 		
 	</div>

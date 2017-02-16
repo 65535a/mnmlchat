@@ -24,10 +24,15 @@ $(document).ready(function(){
 	
 	$('#addRoom').submit(function(e){
 		e.preventDefault();
-		socket.emit('leave room', room);
+		var newRoom = $roomBox.val();
 		socket.emit('add room', $roomBox.val());
-		socket.emit('join room', $roomBox.val()); 
-		room = $roomBox.val();
+		socket.emit('leave room', room, function(data) {
+			if(data){
+				socket.emit('join room', newRoom);
+				room = newRoom;
+				console.log(room);
+			}
+		});
 		$('#messages').empty();
 		$roomBox.val('');
 		$('#m').focus();
@@ -50,16 +55,21 @@ $(document).ready(function(){
 		$('#m').val('');
 	});
 	
-	$('#rooms').on('click', '.roomLink' ,function(){
+	$('#rooms').on('click', '.roomLink', function(){
 		var current = this;
 		var newRoom = '';
 	 	newRoom = current.textContent;		
-		socket.emit('leave room', room);
-		socket.emit('join room', newRoom);
-		room = newRoom;
-		$('#messages').empty();
-		console.log(newRoom);
-		$('#m').focus();
+		if(newRoom !== room){	
+			socket.emit('leave room', room, function(data) {
+				if(data){
+					socket.emit('join room', newRoom);
+					room = newRoom;
+					console.log(room);
+				}
+			});
+			$('#messages').empty();
+			$('#m').focus();
+		}
 	});
 
 	$('#users').on('click', '.userLink' ,function(){
