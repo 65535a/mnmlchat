@@ -2,62 +2,76 @@
 <html>
   <head>
     <title>mnmlchat</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<!--	<link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="/css/kube.css">
+ 	<link rel="stylesheet" href="/css/kube.min.css">
 	<link rel="stylesheet" href="/css/style.css">
   
   </head>
   
   <body>
 
-  	<div id="enterNick">
-  		<p><b>Enter your nickname:</b></p>
-  		<p id="nickError"></p>
-  		<form id="setNick">
-			<input size="35" id="nickname"</input>
-			<input type="submit"></input> 
-  		</form>
-  	</div>
-
+  	
+	
     <div id="content">
     	
-    	<div id="headerBar">
-    		<div id="headerChat" class="header"><h2>mnmlchat</h2></div>
-       	</div>
-  	  	
-  	  	<div id="chatWindow">
-			<ul id="messages"></ul>
-  	 	
-  	 	  	<form id="chat">
-  	   			<input id="m" autocomplete="off""/><button id="s">send</button>
-  			</form>
-  	 	</div>		
-  	 	 	
+	   	<div id="headerBar"></div>
 
-			
-		<div id="usersColumn">
-			<div id="headerUsers" class="header"><h2>users</h2></div>
+		<div id="enterNick">
+  			<p><b>Enter your nickname:</b></p>
+  			<p id="nickError"></p>
+  			<form id="setNick">
+				<input size="35" id="nickname"</input>
+				<input type="submit"></input> 
+  			</form>
+  		</div>
+    		
+ 	  	<div id=container class="row">
+  	  	
+  	  	<div id="chatWindow" class="col col-6">
+			<div id="headerChat" class="header"><h2>mnmlchat</h2></div>
+			<ul id="messages"></ul>
+   	 	</div>
+  
+  		<div id="usersColumn" class="col col-3">
+			<div id="headerUsers" class="header"><h3>users</h3></div>
 			<div id="users">
-			<p></p>
+				<p></p>
 			</div>
 		</div>
 
-		<div id="rooms">
-		  	<form id="addRoom" action="">				
-					<input size="35" id="room" autocomplete="off" /><button id="add">add</button>				
-  			</form>
-			<div id="headerRooms" class="header"><h2>channels</h2></div>
-			<p id="roomsList"></p>
+		<div id="roomsColumn" class="col col-3">
+		  	<div id="headerRooms" class="header"><h3>channels</h3></div>
+		 	<div id="rooms">
+		  		<p id="roomsList"></p>
+		  	</div>
 		</div>
 		
+		
+	</div>
+	<div id="textBoxes" class="row">
+			<div class="col col-6">
+			<form id="chat" class="row" >
+  	   			<input id="m" class="col col-9" autocomplete="off""/><button id="s" class="button secondary small" class="col col-3">send</button>
+  			</form>
+			</div>
+			<div class="col col-3 push-right">
+			<form id="addRoom" action="" class="row" >				
+				<input id="room" class="col col-9 push-right" autocomplete="off" /><button id="add" class="button secondary small" class="col col-3">add</button>				
+  			</form>
+  			</div>
+  	</div>
+	
 	</div>
 		
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/js/jquery.min.js"></script>
-<!--		<script src="/js/bootstrap.min.js"></script>	-->
 		<script src="/js/client.js"></script>
-
+		<script src="/js/kube.js"></script>
+		<script src="/js/kube.min.js"></script>
 
   </body>
 </html>

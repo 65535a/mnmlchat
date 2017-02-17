@@ -80,10 +80,12 @@ $(document).ready(function(){
 	
 	socket.on('chat message', function(nickname, msg){
 		$('#messages').append($('<li>').html('<b>' + nickname + " : " + '</b>' + msg));
+		$('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 2000);
 	});
 	
 	socket.on('private message', function(nickname, msg){
 		$('#messages').append($('<li>').html('<b>' + '<i>' + nickname + " : " + '</b>' + msg + '</i>'));
+		$('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 2000);
 	});
 		
 	socket.on('users', function(data){

@@ -1,29 +1,72 @@
-body { font: 12px Helvetica, Arial; }
+body { 
+	overflow: hidden;
+	background-color: #eeeeee;
+}
 
-#enternick{}
+#enterNick {
+  position: relative;
+  background: #dddddd;
+  top: 0px;
+  padding: 20px;
+  border: solid 1px;
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
 
-#content{ position: fixed; width: 100%}
+#headerBar { 
+	background-color: #cccccc;
+	padding: 3px;
+    height: 50px;
+}
 
-#headerBar{ position: fixed; width: 100%; height: 34px; font-size: 15px; background: #cccccc;}
-#headerChat{ position: absolute; left: 10px; top: -13px;}
-#headerUsers{ position: relative; margin-right: 120px; top: 5px;}
-#headerRooms{ position: absolute; right:55px; top:-18px; }
+#headerUsers {
+    margin-top: 6px;
 
-#chatWindow{ position: absolute; top:33px; border-right: solid 1px #cccccc; height: 2000px; width: 55%; left: -40px; z-index: -1;}
+}
 
-#messages{ position: absolute; top: -7px; left: 0px; list-style: none; white-space: normal; word-wrap: break-word; width: 91%;}
-#messages li{ padding: 5px; }
-#messages li:nth-child(odd){ background: #eeeeee; } 
+#headerRooms {
+    margin-top: 6px;
 
-#chat{ position: fixed; left: 10px; bottom:10px; width:100%; white-space: nowrap;}      
-#m{ width: 40% }
-#s{ }
+}
 
-#usersColumn { position: relative; right: 70px; margin-left: 68%; top: -11px; border-right: solid 1px #cccccc; width: 14%; height:2000px; text-align: center;}
-#users { position: absolute; }
+#container {
+  	padding: 3px;
+    position: fixed;
+    top: 0px;
+    width: 100%
+}
 
-#rooms { text-align: center; position: fixed; right: 10px; margin-right: 2%; top: 20px; width: 100%;}
-#roomsList{ position: fixed; top: 36px; right:110px; }
-#room { position: fixed; bottom: 10px; right: 50px; width: 14% ; }
-#add { position: fixed; bottom: 10px; right: 10px; width: 40px ; }
+#messages {
+  list-style: none;
+  margin-right:30px;
+  overflow-y: scroll;
+  width: auto;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#users {
+  overflow-y: scroll;
+  width: auto;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#rooms {
+  overflow-y: scroll;
+  width: auto;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#textBoxes {
+ 	position: fixed;
+ 	bottom: -32px;
+ 	width:100%;
+}
 

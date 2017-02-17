@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>mnmlchat</title>
+
+	<link rel="stylesheet" href="/css/kube.css">
+ 	<link rel="stylesheet" href="/css/kube.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+  
+  </head>
+  
+  <body>
+
+  	<div id="enterNick">
+  		<p><b>Enter your nickname:</b></p>
+  		<p id="nickError"></p>
+  		<form id="setNick">
+			<input size="35" id="nickname"</input>
+			<input type="submit"></input> 
+  		</form>
+  	</div>
+
+    <div id="content">
+    	
+    	<div id="headerBar">
+    		<div id="headerChat" class="header"><h2>mnmlchat</h2></div>
+       	</div>
+  	  	
+  	  	<div id="chatWindow">
+			<ul id="messages"></ul>
+  	 	
+  	 	  	<form id="chat">
+  	   			<input id="m" autocomplete="off""/><button id="s">send</button>
+  			</form>
+  	 	</div>		
+  	 	 	
+
+			
+		<div id="usersColumn">
+			<div id="headerUsers" class="header"><h2>users</h2></div>
+			<div id="users">
+			<p></p>
+			</div>
+		</div>
+
+		<div id="rooms">
+		  	<form id="addRoom" action="">				
+					<input size="35" id="room" autocomplete="off" /><button id="add">add</button>				
+  			</form>
+			<div id="headerRooms" class="header"><h2>channels</h2></div>
+			<p id="roomsList"></p>
+		</div>
+		
+	</div>
+		
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/jquery.min.js"></script>
+<!--		<script src="/js/bootstrap.min.js"></script>	-->
+		<script src="/js/client.js"></script>
+
+
+  </body>
+</html>
