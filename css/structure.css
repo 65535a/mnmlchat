@@ -49,7 +49,7 @@ body {
   margin-top:50px;
   padding-right:30px;
   top: 0px;
-  height: 89%;
+  height: 86%;
   width: 49.5%;
   overflow-y: scroll;
 }
@@ -69,13 +69,21 @@ padding-left: 15px;
 margin-left: 0px;
 }
 
-#roomsWindow {
+#roomsColumn {
   position: fixed;
+  margin-top: 26%;
+  bottom: -34%;
+  height: 85%;  
+  width: 99%;
+}
+
+#roomsWindow {
+  position: relative;
   margin-top: 0px;
-  top: 50px;
+  top: 0px;
   overflow-y: scroll;
-  height: 89%;  
-  width: 24.9%;
+  height: 43%;  
+  width: 36%;
 }
 
 #rooms {
@@ -93,8 +101,8 @@ margin-left: 0px;
   margin-top: 0px;
   top: 50px;
   overflow-y: scroll;
-  height: 89%;  
-  width: 24.7%;
+  height: 39%;  
+  width: 36%;
 }
 
 #users {

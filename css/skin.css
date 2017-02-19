@@ -1,67 +1,61 @@
 body { 
-	background-color: #DBEBC0;
+	background-color: #FCB5B5;
 }
 
-h2 {
+h2, h3 {
+	color: white;
+}
+
+/*h3, h2 {
    color: white;
    text-shadow:
-       1px 1px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
+       0px 0px 0 #AEE5D8,
+     0px 0px 0 #AEE5D8,  
+      0px 0px 0 #AEE5D8,
+      0px 0px 0 #AEE5D8,
+       0px 0px 0 #AEE5D8;
 }
-
-
-h3 {
-   color: white;
-   text-shadow:
-       1px 1px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
-}
+ */
 
 #enterNick {
-  background: #CBD4C2;
+  background: #FCDDF2;
   border-radius: 10px;
 }
 
 #headerBar { 
-	background-color: #DBEBC0;
+	background-color: #FCB5B5;
 	border-bottom-right-radius: 10px;
 }
 
 
 #textBoxes { 
-	background-color: #DBEBC0;
+	background-color: #FCB5B5;
 }
 
 #chatWindow { 
 	background-color: #FFFFFF;
 	border-radius: 10px;
-	border: solid 1.5px #071013;
+	border: solid 1.5px #CF8E80;
 }
 
 ul li {
 background: #ffffff;
 }
 ul li:nth-child(odd) {
-background: #E9E9E9;
+background: #FAF6F6;
 }
 
 #usersWindow { 
 	background-color: #FFFFFF;
 	border-radius: 10px;
-	border: solid 1.5px #071013;
+	border: solid 1.5px #CF8E80;
 }
 
 
 #roomsWindow { 
 	background-color: #FFFFFF;
 	border-radius: 10px;
-	border: solid 1.5px #071013;
+	border: solid 1.5px #CF8E80;
 }
 
 #m {

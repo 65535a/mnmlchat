@@ -8,6 +8,8 @@ app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname + '/js'));
 
+var nickMaxLength = 15;
+var roomMaxLength = 15;
 var users = {};
 var rooms = {
 	lobby : new Array()
@@ -49,11 +51,11 @@ io.on('connection', function(socket){
 	});		
 	
 	socket.on('new user', function(data, callback){
-		if(data in users) {
+		if(data in users || data.length > nickMaxLength) {
 			callback(false);
 		} else {
 			callback(true);
-			socket.nickname = data;
+			socket.nickname = data.replace(/ /g,'');
 			socket.room = 'lobby'
 			users[socket.nickname] = socket;
 			users[socket.room] = 'lobby';
@@ -64,11 +66,14 @@ io.on('connection', function(socket){
 		}
 	});
 	
-	socket.on('add room', function(data){
-		room = data;
-		rooms[room] = socket.room;
-		rooms[room] = new Array();
-		console.log(socket.nickname + ' created room : ' + room);
+	socket.on('add room', function(data, callback){
+		if(data.length < roomMaxLength){
+			room = data;
+			rooms[room] = socket.room;
+			rooms[room] = new Array();
+			console.log(socket.nickname + ' created room : ' + room);
+			callback(true);
+		} else { callback(false) };
 	});
 	
 	socket.on('join room', function(room){

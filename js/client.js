@@ -17,7 +17,7 @@ $(document).ready(function(){
 				$('#content').show();
 			} else {
 				$('#enterNick').animation('shake');
-				$nickError.html('Username taken!');
+				$nickError.html('Username too long or already taken!');
 			}	
 		});
 		$nickBox.val('');
@@ -26,13 +26,16 @@ $(document).ready(function(){
 	$('#addRoom').submit(function(e){
 		e.preventDefault();
 		var newRoom = $roomBox.val();
-		socket.emit('add room', $roomBox.val());
-		socket.emit('leave room', room, function(data) {
+		socket.emit('add room', $roomBox.val(), function(data) {
 			if(data){
-				socket.emit('join room', newRoom);
-				room = newRoom;
-				console.log(room);
-			}
+				socket.emit('leave room', room, function(data) {
+					if(data){
+						socket.emit('join room', newRoom);
+						room = newRoom;
+						console.log(room);
+					} 
+				});
+			} else { $('#addRoom').animation('shake') }		
 		});
 		$('#messages').empty();
 		$roomBox.val('');
