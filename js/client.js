@@ -8,14 +8,15 @@ $(document).ready(function(){
 //	var $addRoom = $('#addRoom');
 	var $roomBox = $('#room');	
 	var room = "lobby";
-			
+	$('#enterNick').animation('flipIn');		
 	$('#setNick').submit(function(e){
 		e.preventDefault();
 		socket.emit('new user', $nickBox.val(), function(data){
 			if(data){
-				$('#enterNick').hide();
+				$('#enterNick').animation('flipOut');
 				$('#content').show();
 			} else {
+				$('#enterNick').animation('shake');
 				$nickError.html('Username taken!');
 			}	
 		});
@@ -80,12 +81,12 @@ $(document).ready(function(){
 	
 	socket.on('chat message', function(nickname, msg){
 		$('#messages').append($('<li>').html('<b>' + nickname + " : " + '</b>' + msg));
-		$('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 2000);
+		$('#chatWindow').animate({scrollTop: $('#chatWindow')[0].scrollHeight}, 2000);
 	});
 	
 	socket.on('private message', function(nickname, msg){
 		$('#messages').append($('<li>').html('<b>' + '<i>' + nickname + " : " + '</b>' + msg + '</i>'));
-		$('#messages').animate({scrollTop: $('#messages')[0].scrollHeight}, 2000);
+		$('#chatWindow').animate({scrollTop: $('#chatWindow')[0].scrollHeight}, 2000);
 	});
 		
 	socket.on('users', function(data){

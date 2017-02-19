@@ -2,6 +2,7 @@
   "name": "mnmlchat",
   "version": "0.1.0",
   "description": "A minimalistic and simple chat application.",
+  "author": "Aku Leinikki",
   "dependencies": {
     "express": "^4.14.1",
     "jquery": "^3.1.1",

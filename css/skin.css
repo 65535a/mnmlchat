@@ -1,0 +1,75 @@
+body { 
+	background-color: #DBEBC0;
+}
+
+h2 {
+   color: white;
+   text-shadow:
+       1px 1px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+
+h3 {
+   color: white;
+   text-shadow:
+       1px 1px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+#enterNick {
+  background: #CBD4C2;
+  border-radius: 10px;
+}
+
+#headerBar { 
+	background-color: #DBEBC0;
+	border-bottom-right-radius: 10px;
+}
+
+
+#textBoxes { 
+	background-color: #DBEBC0;
+}
+
+#chatWindow { 
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	border: solid 1.5px #071013;
+}
+
+ul li {
+background: #ffffff;
+}
+ul li:nth-child(odd) {
+background: #E9E9E9;
+}
+
+#usersWindow { 
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	border: solid 1.5px #071013;
+}
+
+
+#roomsWindow { 
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	border: solid 1.5px #071013;
+}
+
+#m {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#room {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}

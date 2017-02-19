@@ -1,0 +1,133 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
+body { 
+	overflow: hidden;
+}
+
+#enterNick {
+  position: relative;
+  top: 0px;
+  padding: 20px;
+  border: solid 1px;
+  width:300px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+#headerBar { 
+	padding: 3px;
+    height: 50px;
+}
+
+#headerUsers {
+    margin-top: 6px;
+
+}
+
+#headerRooms {
+    margin-top: 6px;
+
+}
+
+#container {
+  	padding: 3px;
+    position: fixed;
+    top: 0px;
+    width: 100%    
+}
+
+#chatWindow {
+  position: fixed;
+  margin-top:50px;
+  padding-right:30px;
+  top: 0px;
+  height: 89%;
+  width: 49.5%;
+  overflow-y: scroll;
+}
+
+
+#messages {
+  	margin-top: 15px;
+	list-style: none;
+	word-wrap: break-word;
+}
+
+#messages li {
+position: relative;
+left: -19px;
+width: 108%;
+padding-left: 15px;
+margin-left: 0px;
+}
+
+#roomsWindow {
+  position: fixed;
+  margin-top: 0px;
+  top: 50px;
+  overflow-y: scroll;
+  height: 89%;  
+  width: 24.9%;
+}
+
+#rooms {
+  position: absolute;
+  top: 0px;
+  padding-left: 10px;
+  width: 100%;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#usersWindow {
+  position: fixed;
+  margin-top: 0px;
+  top: 50px;
+  overflow-y: scroll;
+  height: 89%;  
+  width: 24.7%;
+}
+
+#users {
+  position: absolute;
+  top: 0px;
+  padding-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#textBoxes {
+ 	background-color: #cccccc;
+    position: fixed;
+ 	bottom: -32px;
+ 	width:100%;
+}
+
+#m {
+  width: 88%;
+}
+
+#s {
+  width: 11.5%;
+}
+
+#room {
+  width: 82%;
+}
+
+#add {
+  width: 18%;
+}
+
