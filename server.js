@@ -10,6 +10,7 @@ app.use('/js', express.static(__dirname + '/js'));
 
 var nickMaxLength = 15;
 var roomMaxLength = 15;
+var messageMaxLength = 140;
 var users = {};
 var rooms = {
 	lobby : new Array()
@@ -33,23 +34,25 @@ io.on('connection', function(socket){
 
 
 	socket.on('chat message', function(msg, room, callback){
-		if(msg.length > 0 && msg.substr(0, 3) === '/w ') {
-			msg = msg.substr(3);
-			var ind = msg.indexOf(' ');
-			if(ind !== -1){
-				var name = msg.substr(0, ind);
-				var msg = msg.substr(ind + 1);				
-				if (name in users){
-					msg = msg.replace(/(<([^>]+)>)/ig,"");
-					users[name].emit('private message', socket.nickname, msg);
-					callback(true);
+		if(msg.length < messageMaxLength) {
+			if(msg.length > 0 && msg.substr(0, 3) === '/w ') {
+				msg = msg.substr(3);
+				var ind = msg.indexOf(' ');
+				if(ind !== -1){
+					var name = msg.substr(0, ind);
+					var msg = msg.substr(ind + 1);				
+						if (name in users){
+						msg = msg.replace(/(<([^>]+)>)/ig,"");
+						users[name].emit('private message', socket.nickname, msg);
+						callback(true);
+					}
 				}
-			}
-		} else if(msg.length > 0){
-			msg = msg.replace(/(<([^>]+)>)/ig,"");
-			io.sockets.in(room).emit('chat message', socket.nickname, msg);
-			console.log(room + " : " + socket.nickname + ' : ' + msg );
-			}
+			} else if(msg.length > 0){
+				msg = msg.replace(/(<([^>]+)>)/ig,"");
+				io.sockets.in(room).emit('chat message', socket.nickname, msg);
+				console.log(room + " : " + socket.nickname + ' : ' + msg );
+				}
+		}
 	});		
 	
 	socket.on('new user', function(data, callback){
