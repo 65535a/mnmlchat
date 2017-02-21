@@ -1,6 +1,6 @@
 {
   "name": "mnmlchat",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A minimalistic and simple chat application.",
   "author": "Aku Leinikki",
   "dependencies": {

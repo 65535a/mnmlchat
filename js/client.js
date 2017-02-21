@@ -5,16 +5,20 @@ $(document).ready(function(){
 	var $nickBox = $('#nickname');
 	var $users = $('#users');
 	var $rooms = $('#roomsList');
-//	var $addRoom = $('#addRoom');
-	var $roomBox = $('#room');	
+	var $roomBox = $('#room');
 	var room = "lobby";
-	$('#enterNick').animation('flipIn');		
+
+
+	socket.on('connected', function(){
+		$('#enterNick').animation('flipIn');
+		console.log('connected');
+	});
+	
 	$('#setNick').submit(function(e){
 		e.preventDefault();
 		socket.emit('new user', $nickBox.val(), function(data){
 			if(data){
 				$('#enterNick').animation('flipOut');
-				$('#content').show();
 			} else {
 				$('#enterNick').animation('shake');
 				$nickError.html('UNACCEPTABLE!');

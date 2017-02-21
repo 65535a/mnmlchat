@@ -25,10 +25,12 @@ io.set('heartbeat interval', 2000);
 
 io.on('connection', function(socket){
 	console.log('a user connected');
+	socket.emit('connected');
 	socket.on('disconnect', function(){
 		if(!socket.nickname) return;
 		clearUser(socket.nickname, socket.room);
 		delete users[socket.nickname];
+		socket.disconnect();
 		console.log('a user disconnected');
 	});
 
@@ -56,7 +58,7 @@ io.on('connection', function(socket){
 	});		
 	
 	socket.on('new user', function(data, callback){
-		data = data.replace(/(<([^>]+)>)/ig,"aaaaaaaaaaaaaaaaaaaa");
+		data = data.replace(/(<([^>]+)>) /ig,"aaaaaaaaaaaaaaaaaaaa");
 		if(data in users || data.length > nickMaxLength) {
 			callback(false);
 		} else {
