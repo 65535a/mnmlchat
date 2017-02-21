@@ -27,9 +27,14 @@ body {
     height: 50px;
 }
 
+#headerChat {
+  position: fixed;
+  top: 5px;
+  left: 15px;
+}
+
 #headerUsers {
     margin-top: 6px;
-
 }
 
 #headerRooms {
@@ -139,3 +144,6 @@ margin-left: 0px;
   width: 18%;
 }
 
+#mobileMenu {
+  visibility: collapse;
+}

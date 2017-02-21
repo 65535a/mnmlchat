@@ -1,0 +1,168 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
+body { 
+	overflow: hidden;
+}
+
+#enterNick {
+  position: relative;
+  top: 0px;
+  padding: 20px;
+  border: solid 1px;
+  width:300px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+#headerBar { 
+	padding: 3px;
+    height: 50px;
+}
+
+#headerUsers {
+    visibility: collapse;
+}
+
+#headerRooms {
+    visibility: collapse;
+}
+
+#container {
+  	padding: 3px;
+    position: fixed;
+    top: 0px;
+    width: 100%    
+}
+
+#chatWindow {
+  position: fixed;
+  margin-top:50px;
+  padding-right:30px;
+  top: 0px;
+  height: 86%;
+  width: 98.5%;
+  overflow-y: scroll;
+}
+
+#sideBar {
+  visibility: collapse;
+}
+
+
+#messages {
+  	margin-top: 15px;
+	list-style: none;
+	word-wrap: break-word;
+}
+
+#messages li {
+position: relative;
+left: -19px;
+width: 108%;
+padding-left: 15px;
+margin-left: 0px;
+}
+
+#roomsColumn {
+  position: fixed;
+  margin-top: 26%;
+  bottom: -34%;
+  height: 85%;  
+  width: 99%;
+}
+
+#roomsWindow {
+  position: relative;
+  margin-top: 0px;
+  top: -54px;
+  overflow-y: scroll;
+  height: 46%;  
+  width: 98.5%;
+}
+
+#rooms {
+  position: absolute;
+  top: 0px;
+  padding-left: 10px;
+  width: 100%;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#usersWindow {
+  position: fixed;
+  margin-top: 0px;
+  top: 50px;
+  overflow-y: scroll;
+  height: 39%;  
+  width: 98.5%;
+}
+
+#users {
+  position: absolute;
+  top: 0px;
+  padding-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  height: 90%;
+  max-height: 550px;
+  word-wrap: break-word;
+}
+
+#textBoxes {
+    position: fixed;
+ 	bottom: -32px;
+ 	width:100%;
+ 	height: 109px;
+}
+
+#s {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  border-radius: 0px;
+}
+
+#m {
+  width: 100%;
+  position: fixed;
+  bottom: 36px;
+  left: 0px;
+  border-radius: 0px;
+}
+
+
+#room {
+  width: 100%;
+  position: fixed;
+  bottom: 36px;
+  border-radius: 0px;          
+  visibility: collapse;
+}
+
+#add {
+width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0px;
+  visibility: collapse;
+}
+
+ #mobileMenu {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 1;
+  visibility: visible;
+}
+
