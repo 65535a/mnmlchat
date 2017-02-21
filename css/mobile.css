@@ -8,6 +8,7 @@
 
 body { 
 	overflow: hidden;
+	max-width: 768;
 }
 
 #enterNick {
