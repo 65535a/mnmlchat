@@ -20,6 +20,8 @@ if (width <= 768) {
 			$('#sideBar').animation('fadeIn');
 			$('#add').css('visibility', 'visible');
 			$('#room').css('visibility', 'visible');
+			$('#m').css('visibility', 'collapse');
+			$('#s').css('visibility', 'collapse');
 			
 			console.log("menu päälle");
 		}else{
@@ -27,6 +29,8 @@ if (width <= 768) {
 			$('#sideBar').css('visibility', 'collapse');	
 			$('#add').css('visibility', 'collapse');
 			$('#room').css('visibility', 'collapse');
+			$('#m').css('visibility', 'visible');
+			$('#s').css('visibility', 'visible');
 
 			console.log("menu pois");
 		}
