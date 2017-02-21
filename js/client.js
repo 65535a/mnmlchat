@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 
 	socket.on('connected', function(){
-		$('#enterNick').animation('flipIn');
+		$('#enterNick').animation('flipIn');		
 		console.log('connected');
 	});
 	
@@ -19,6 +19,7 @@ $(document).ready(function(){
 		socket.emit('new user', $nickBox.val(), function(data){
 			if(data){
 				$('#enterNick').animation('flipOut');
+				$nickError.html('');
 			} else {
 				$('#enterNick').animation('shake');
 				$nickError.html('UNACCEPTABLE!');
