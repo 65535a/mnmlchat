@@ -17,7 +17,7 @@ $(document).ready(function(){
 				$('#content').show();
 			} else {
 				$('#enterNick').animation('shake');
-				$nickError.html('Username too long or already taken!');
+				$nickError.html('UNACCEPTABLE!');
 			}	
 		});
 		$nickBox.val('');

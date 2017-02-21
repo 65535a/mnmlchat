@@ -29,7 +29,7 @@ io.on('connection', function(socket){
 		clearUser(socket.nickname, socket.room);
 		delete users[socket.nickname];
 		console.log('a user disconnected');
-	});	
+	});
 
 
 	socket.on('chat message', function(msg, room, callback){
@@ -40,17 +40,20 @@ io.on('connection', function(socket){
 				var name = msg.substr(0, ind);
 				var msg = msg.substr(ind + 1);				
 				if (name in users){
+					msg = msg.replace(/(<([^>]+)>)/ig,"");
 					users[name].emit('private message', socket.nickname, msg);
 					callback(true);
 				}
 			}
 		} else if(msg.length > 0){
+			msg = msg.replace(/(<([^>]+)>)/ig,"");
 			io.sockets.in(room).emit('chat message', socket.nickname, msg);
 			console.log(room + " : " + socket.nickname + ' : ' + msg );
 			}
 	});		
 	
 	socket.on('new user', function(data, callback){
+		data = data.replace(/(<([^>]+)>)/ig,"aaaaaaaaaaaaaaaaaaaa");
 		if(data in users || data.length > nickMaxLength) {
 			callback(false);
 		} else {
@@ -67,6 +70,7 @@ io.on('connection', function(socket){
 	});
 	
 	socket.on('add room', function(data, callback){
+		data = data.replace(/(<([^>]+)>)/ig,"aaaaaaaaaaaaaaaaaaaa");
 		if(data.length < roomMaxLength){
 			room = data;
 			rooms[room] = socket.room;
