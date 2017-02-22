@@ -162,7 +162,7 @@ width: 100%;
  #mobileMenu {
   position: fixed;
   right: 15px;
-  top: 15px;
+  top: 18px;
   z-index: 1;
   visibility: visible;
 }
