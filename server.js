@@ -64,19 +64,20 @@ io.on('connection', function(socket){
 		} else {
 			callback(true);
 			socket.nickname = data.replace(/ /g,'');
-			socket.room = 'lobby'
+			socket.room = 'lobby';
 			users[socket.nickname] = socket;
 			users[socket.room] = 'lobby';
 			socket.join('lobby');
 			rooms['lobby'].push(socket.nickname);
 			updateNicknames('lobby');
 			updateRooms();
+			console.log('new user : ' + socket.nickname);
 		}
 	});
 	
 	socket.on('add room', function(data, callback){
 		data = data.replace(/(<([^>]+)>)/ig,"aaaaaaaaaaaaaaaaaaaa");
-		if(data.length < roomMaxLength){
+		if(data.length < roomMaxLength && data.length > 0){
 			room = data;
 			rooms[room] = socket.room;
 			rooms[room] = new Array();
@@ -116,7 +117,6 @@ io.on('connection', function(socket){
 		updateNicknames(socket.room);
 		updateRooms();
 	}
-
 });
 
 

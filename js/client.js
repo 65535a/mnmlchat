@@ -10,7 +10,8 @@ $(document).ready(function(){
 
 
 	socket.on('connected', function(){
-		$('#enterNick').animation('flipIn');		
+		$('#enterNick').animation('flipIn');
+		room = "lobby";	
 		console.log('connected');
 	});
 	
@@ -57,7 +58,7 @@ $(document).ready(function(){
 				if(ind !== -1){
 					var name = receipt.substr(0, ind);
 					var receipt = receipt.substr(ind + 1);
-					$('#messages').append($('<li>').html('<i>' + '---> ' + name + " : " + receipt + '</i>'));
+					$('#messages').append($('<li>').html('<i>' + '--> ' + name + " : " + receipt + '</i>'));
 				}
 			}
 		});
