@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 
 	socket.on('connected', function(){
+		setTimeout(function(){ $('#enterNick').show(); }, 1000);
 		$('#enterNick').animation('flipIn');
 		room = "lobby";	
 		console.log('connected');
@@ -20,6 +21,7 @@ $(document).ready(function(){
 		socket.emit('new user', $nickBox.val(), function(data){
 			if(data){
 				$('#enterNick').animation('flipOut');
+				setTimeout(function(){ $('#enterNick').hide(); }, 1000); 
 				$nickError.html('');
 			} else {
 				$('#enterNick').animation('shake');
