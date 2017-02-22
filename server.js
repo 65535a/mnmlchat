@@ -54,7 +54,7 @@ io.on('connection', function(socket){
 				io.sockets.in(room).emit('chat message', socket.nickname, msg);
 				console.log(room + " : " + socket.nickname + ' : ' + msg );
 				}
-		}
+		} else {callback(false)};
 	});		
 	
 	socket.on('new user', function(data, callback){
@@ -118,7 +118,6 @@ io.on('connection', function(socket){
 		updateRooms();
 	}
 });
-
 
 
 function updateNicknames(room){

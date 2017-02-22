@@ -62,7 +62,7 @@ $(document).ready(function(){
 					var receipt = receipt.substr(ind + 1);
 					$('#messages').append($('<li>').html('<i>' + '--> ' + name + " : " + receipt + '</i>'));
 				}
-			}
+			}else if(data === false) {$('#chatWindow').animation('shake') };
 		});
 		$('#m').val('');
 	});
