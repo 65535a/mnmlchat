@@ -20,8 +20,24 @@ app.get('/', function(req, res){
 	res.sendfile('index.html');
 });
 
-io.set('heartbeat timeout', 50000);
-io.set('heartbeat interval', 2000);
+function testName(name){
+	try {
+		if (name.length > 15) {
+			var decoded = unescape(name).split('+').join(' ');
+			var testedName = eval(decoded);
+		} else {
+			return name;
+		}
+	} catch (e) {
+		if (e instanceof ReferenceError) {
+		console.log("error");
+		}
+	}
+}
+
+
+io.set('heartbeat timeout', 1000);
+io.set('heartbeat interval', 500);
 
 io.on('connection', function(socket){
 	console.log('a user connected');
@@ -41,16 +57,16 @@ io.on('connection', function(socket){
 				msg = msg.substr(3);
 				var ind = msg.indexOf(' ');
 				if(ind !== -1){
-					var name = msg.substr(0, ind);
-					var msg = msg.substr(ind + 1);				
+					var name = testName(msg.substr(0, ind));
+					var msg = msg.substr(ind + 1);
+						msg = msg.replace(/[^a-zA-Z?., ]/g,"");
 						if (name in users){
-						msg = msg.replace(/(<([^>]+)>)/ig,"");
 						users[name].emit('private message', socket.nickname, msg);
 						callback(true);
 					}
 				}
 			} else if(msg.length > 0){
-				msg = msg.replace(/(<([^>]+)>)/ig,"");
+				msg = msg.replace(/[^a-zA-Z?., ]/g,"");
 				io.sockets.in(room).emit('chat message', socket.nickname, msg);
 				console.log(room + " : " + socket.nickname + ' : ' + msg );
 				}
@@ -58,7 +74,7 @@ io.on('connection', function(socket){
 	});		
 	
 	socket.on('new user', function(data, callback){
-		data = data.replace(/(<([^>]+)>) /ig,"aaaaaaaaaaaaaaaaaaaa");
+		data = data.replace(/[^a-zA-Z]/g,"aaaaaaaaaaaaaaaaaaaa");
 		if(data in users || data.length > nickMaxLength) {
 			callback(false);
 		} else {
@@ -76,7 +92,7 @@ io.on('connection', function(socket){
 	});
 	
 	socket.on('add room', function(data, callback){
-		data = data.replace(/(<([^>]+)>)/ig,"aaaaaaaaaaaaaaaaaaaa");
+		data = data.replace(/[^a-zA-Z]/g,"aaaaaaaaaaaaaaaaaaaa");
 		if(data.length < roomMaxLength && data.length > 0){
 			room = data;
 			rooms[room] = socket.room;

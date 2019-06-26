@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var socket = io();
+	var socket = io({transports: ['websocket'], upgrade: false});
 	var $setNick = $('#setNick');
 	var $nickError = $('#nickError');
 	var $nickBox = $('#nickname');

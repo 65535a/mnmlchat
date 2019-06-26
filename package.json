@@ -1,8 +1,8 @@
 {
-  "name": "mnmlchat",
+  "name": "Lemonchat",
   "version": "0.3.2",
   "description": "Minimalist and simple chat application.",
-  "author": "Aku Leinikki",
+  "author": "Princess Bubblegum",
   "dependencies": {
     "express": "^4.14.1",
     "jquery": "^3.1.1",

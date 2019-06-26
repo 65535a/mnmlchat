@@ -1,9 +1,9 @@
 body { 
-	background-color: #FCB5B5;
+	background-color:#ffff1a;
 }
 
 h2, h3 {
-	color: white;
+	color: black;
 }
 
 /*h3, h2 {
@@ -18,18 +18,18 @@ h2, h3 {
  */
 
 #enterNick {
-  background: #FCDDF2;
+  background: #e6e600;
   border-radius: 10px;
 }
 
 #headerBar { 
-	background-color: #FCB5B5;
+	background-color: #e6e600;
 	border-bottom-right-radius: 10px;
 }
 
 
 #textBoxes { 
-	background-color: #FCB5B5;
+	background-color: #e6e600;
 }
 
 #chatWindow { 
